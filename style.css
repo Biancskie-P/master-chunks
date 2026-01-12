@@ -171,15 +171,17 @@ header {
 /* =====================================================
    MODERN PAGE TRANSITION
    ===================================================== */
+/* Update your existing Section styling */
 section {
     padding: 40px;
     display: none;
     background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 70px;
-    margin: 30px auto;
+    border-radius: 40px; /* Reduced from 70px for better utility */
+    margin: 20px auto;
+    width: 95%; /* Ensure it doesn't touch the screen edges */
     max-width: 1000px;
-    min-height: 400px; /* Gives it a base height */
-    overflow-y: visible; /* Ensures it scrolls with the body */
+    min-height: 400px;
+    overflow-x: hidden; /* Prevent accidental horizontal scroll */
 }
 
 /* When a section becomes active, run this animation */
@@ -277,26 +279,20 @@ section p {
    ===================================================== */
 .owner-photo-wrapper {
     position: relative;
-    width: 350px;
+    width: 90%; /* Use percentage instead of fixed px */
+    max-width: 320px; /* Keeps it from getting too big on tablets */
     margin: 25px auto;
-    padding: 12px;
+    padding: 10px;
     border-radius: 28px;
-
-    /* Elegant bakery-style frame */
-    background: linear-gradient(
-        135deg,
-        #f0d6c1,
-        #c89b7b,
-        #a06b43
-    );
-
-    box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.25),
-        inset 0 0 0 2px rgba(255, 255, 255, 0.4);
-
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    /* ... keep your existing background/shadow ... */
 }
 
+.about-box {
+    width: 100%; /* Ensure it fills the container */
+    max-width: 600px;
+    padding: 25px; /* Reduced padding for mobile */
+    /* ... keep other styles ... */
+}
 /* Inner border */
 .owner-photo-wrapper::before {
     content: "";
@@ -543,33 +539,57 @@ footer {
 }
 
 /* =====================================================
-   RESPONSIVE
+   RESPONSIVE (IPHONE & MOBILE OPTIMIZATION)
    ===================================================== */
 @media (max-width: 768px) {
-    .header-top {
+    /* 1. Reset the container to stack everything vertically and center it */
+    .main-nav-container {
         flex-direction: column;
+        align-items: center; /* Centers children horizontally */
+        justify-content: center;
+        border-radius: 25px;
+        width: 92%;
+        padding: 20px;
+        gap: 15px; /* Adds space between search bar and buttons */
     }
 
-    nav {
-        flex-direction: column;
+    /* 2. Strip away the desktop 'Three-Zone' widths */
+    .nav-side-section, 
+    .nav-center-section {
+        width: 100%;
+        max-width: 100%;
+        flex: none; /* Removes the 1 and 2 ratio weights */
+        justify-content: center; /* Centers content inside the section */
+        display: flex;
+        margin: 0;
     }
 
-    section {
-        max-width: 90%;
-        padding: 30px 20px;
+    /* 3. Center the Search Bar Wrapper */
+    .search-wrapper {
+        margin: 0 auto; /* Ensures it stays in the middle */
+        width: 100%;
+        max-width: 250px; /* Limits width so it doesn't stretch too far */
     }
 
-    .search-container {
+    /* 4. Align the Buttons in a clean grid or stack */
+    .nav-center-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Puts Home/About on one row, etc. */
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* 5. Center the Help & Support button specifically */
+    .nav-side-section.right {
         justify-content: center;
         width: 100%;
     }
 
-    #search-input {
-        width: 70%;
-        margin-bottom: 8px;
-    }
-
-    #search-btn {
-        width: 50%;
+    .nav-link {
+        font-size: 13px;
+        padding: 10px;
+        text-align: center;
+        display: block;
+        width: 100%;
     }
 }
