@@ -1,0 +1,575 @@
+/* =====================================================
+   GENERAL RESET (FIXED)
+   ===================================================== */
+* {
+    margin: 0;          /* FIXED */
+    padding: 0;         /* FIXED */
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =====================================================
+   BODY STYLING
+   ===================================================== */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #333;
+    animation: fadeIn 0.8s ease-in;
+
+    background-image: url('BG-SAMPLE.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    background-color: #d5c4b1;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+header {
+    background-color: rgba(186, 149, 123, 0.903);
+    padding: 30px 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.header-img {
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto 15px;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.header-img:hover {
+    transform: scale(1.05);
+}
+
+/* =====================================================
+   NAVIGATION BAR + SEARCH BAR (ENHANCED)
+   ===================================================== */
+.main-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(45, 30, 20, 0.85); /* Dark cocoa glass */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 15px;
+    border-radius: 100px;
+    width: 95%; 
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Three-Zone Alignment System */
+.nav-side-section {
+    flex: 1; /* Forces both sides to be equal width */
+    display: flex;
+    align-items: center;
+}
+
+.nav-side-section.left {
+    justify-content: flex-start;
+}
+
+.nav-side-section.right {
+    justify-content: flex-end;
+}
+
+.nav-center-section {
+    flex: 2; /* Middle gets more relative space */
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Nav Links Styling */
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: white;
+    color: #4a3321;
+}
+
+/* Search Wrapper inside the left corner */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding-left: 12px;
+    width: 180px;
+    height: 36px;
+}
+
+#search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    width: 100%;
+    font-size: 12px;
+}
+
+#search-btn {
+    background: white;
+    color: #4a3321;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Mobile Fix */
+@media (max-width: 900px) {
+    .main-nav-container {
+        flex-direction: column;
+        border-radius: 30px;
+        padding: 15px;
+    }
+    .nav-side-section, .nav-center-section {
+        width: 100%;
+        justify-content: center;
+        margin: 5px 0;
+    }
+}
+
+#search-btn:hover {
+    transform: scale(1.1);
+}
+
+/* =====================================================
+   MODERN PAGE TRANSITION
+   ===================================================== */
+section {
+    padding: 40px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 70px;
+    margin: 30px auto;
+    max-width: 1000px;
+    min-height: 400px; /* Gives it a base height */
+    overflow-y: visible; /* Ensures it scrolls with the body */
+}
+
+/* When a section becomes active, run this animation */
+section.active {
+    display: block;
+    animation: pageIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes pageIn {
+    0% { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.98);
+        filter: blur(5px);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+        filter: blur(0px);
+    }
+}
+
+section h2 {
+    color: #c17f1c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+section p {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* =====================================================
+   HOME
+   ===================================================== */
+#home .header-img {
+    max-width: 400px;
+    margin: 25px auto;
+}
+
+/* =====================================================
+   ABOUT SECTION - VERTICAL LINEAR LAYOUT
+   ===================================================== */
+.about-grid {
+    display: flex;
+    flex-direction: column; /* Stacks boxes vertically */
+    align-items: center;    /* Centers them horizontally */
+    gap: 30px;              /* Adds space between the boxes */
+    margin-top: 40px;
+    padding: 20px;
+    width: 100%;
+}
+
+.about-box {
+    background: rgba(186, 149, 123, 0.9);
+    border-radius: 30px;
+    padding: 40px;          /* More padding for a premium look */
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    
+    /* Controlling the width of the boxes */
+    width: 100%;
+    max-width: 600px;       /* Keeps them from getting too wide */
+}
+
+.about-box:hover {
+    transform: translateY(-5px);
+    background: rgba(186, 149, 123, 1); /* Solid on hover */
+}
+
+.about-box h3 {
+    color: #4a3321;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.about-box h2 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.about-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #3e2a1c;
+}
+
+/* =====================================================
+   OWNER PHOTO FRAME + HOVER EFFECT
+   ===================================================== */
+.owner-photo-wrapper {
+    position: relative;
+    width: 350px;
+    margin: 25px auto;
+    padding: 12px;
+    border-radius: 28px;
+
+    /* Elegant bakery-style frame */
+    background: linear-gradient(
+        135deg,
+        #f0d6c1,
+        #c89b7b,
+        #a06b43
+    );
+
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.25),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.4);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Inner border */
+.owner-photo-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border-radius: 22px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+}
+
+/* Image itself */
+.owner-photo {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+    position: relative;
+    z-index: 1;
+
+    transition: 
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        filter 0.45s ease;
+}
+
+/* Hover animation */
+.owner-photo-wrapper:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 25px 45px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.6);
+}
+
+.owner-photo-wrapper:hover .owner-photo {
+    transform: scale(1.06);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.05);
+}
+
+
+/* Container for the social icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Base style for the icon links */
+.icon-link {
+    font-size: 28px; /* Size of the icon */
+    color: #4a3321;  /* Matching your dark cocoa theme */
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* Individual hover colors */
+.icon-link.gmail:hover {
+    color: #DB4437; /* Gmail Red */
+    transform: translateY(-5px) scale(1.2);
+}
+
+.icon-link.facebook:hover {
+    color: #4267B2; /* Facebook Blue */
+    transform: translateY(-5px) scale(1.2);
+}
+
+.icon-link.instagram:hover {
+    color: #E1306C; /* Instagram Pink/Purple */
+    transform: translateY(-5px) scale(1.2);
+}
+
+/* Optional: Add a subtle glow on hover */
+.icon-link:hover {
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+/* =====================================================
+   PRODUCTS
+   ===================================================== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    justify-items: center;
+}
+
+.product-card {
+    position: relative;
+    width: 100%;
+    max-width: 230px;
+    height: 300px;
+    border-radius: 22px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    box-shadow: 0 10px 20px rgba(122, 94, 48, 0.15);
+}
+
+.card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.card-content {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+}
+
+.product-card:hover {
+    transform: scale(1.08);
+}
+
+.product-card:hover .card-bg {
+    transform: scale(1.15);
+}
+
+.card-grid:hover .product-card:not(:hover) {
+    transform: scale(0.9);
+}
+
+.card-grid:hover .product-card:not(:hover) .card-bg {
+    filter: brightness(0.5) saturate(0) blur(2px);
+}
+
+/* =====================================================
+   CONTACT FORM
+   ===================================================== */
+form {
+    max-width: 420px;
+    margin: auto;
+    background: rgba(186, 149, 123, 0.9);
+    padding: 30px;
+    border-radius: 70px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #7b4f30;
+    box-shadow: 0 0 8px rgba(210,105,30,0.3);
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+#message {
+    font-size: 15px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* New Contact Info Styling */
+/* Container for the info area */
+.contact-info {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+/* Common row style for Phone, Email, FB, and IG */
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Change to flex-start if you want them left-aligned */
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+/* Icon styling */
+.info-row i {
+    font-size: 18px;
+    width: 20px; /* Fixed width keeps text aligned */
+    text-align: center;
+}
+
+/* Link styling for FB and IG */
+.info-row a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.info-row a:hover {
+    color: #7b4f30; /* Hover color matches your theme */
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: linear-gradient(135deg, #ba957b, #95623d);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(186, 149, 123, 0.85);
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    section {
+        max-width: 90%;
+        padding: 30px 20px;
+    }
+
+    .search-container {
+        justify-content: center;
+        width: 100%;
+    }
+
+    #search-input {
+        width: 70%;
+        margin-bottom: 8px;
+    }
+
+    #search-btn {
+        width: 50%;
+    }
+}

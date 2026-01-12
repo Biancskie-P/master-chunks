@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Master Chunks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+<header>
+    <img src="MC-logo letters.png" class="header-img" alt="Bakery">
+
+    <div class="main-nav-container">
+        
+        <div class="nav-side-section left">
+            <div class="search-wrapper">
+                <input type="text" placeholder="Search..." id="search-input">
+                <button id="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+        </div>
+
+        <nav class="nav-center-section">
+            <a href="#" class="nav-link active" onclick="showSection('home')">Home</a>
+            <a href="#" class="nav-link" onclick="showSection('about')">About</a>
+            <a href="#" class="nav-link" onclick="showSection('products')">Products</a>
+            <a href="#" class="nav-link" onclick="showSection('contact')">Contact</a>
+        </nav>
+        
+        <div class="nav-side-section right">
+            <a href="#" class="nav-link" onclick="showSection('help')">Help & Support</a>
+        </div>
+
+    </div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="active">
+    <img src="MC-logo.png" class="header-img" alt="Bakery">
+    <p>
+        We offer freshly baked products for you to enjoy!
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About</h2>
+
+    <div class="about-grid">
+
+        <!-- Box 1: About Us -->
+        <div class="about-box">
+            <h3>About Us</h3>
+            <p>Master Chunks is a small business based in Quezon City, established in 2022, 
+               and passionate about creating delicious, freshly baked treats made with care and quality ingredients.
+               Each product is crafted to bring comfort, joy, and sweet moments to everyone who enjoys them.</p>
+        </div>
+
+        <!-- Box 2: About the Owner -->
+        <div class="about-box">
+            <h3>About the Owner</h3>
+            <div class="owner-photo-wrapper">
+    <img src="/Images/Kath.png" alt="Kath Pacoma" class="owner-photo">
+</div>
+
+            <h2>Kath Pacoma</h2>
+            <p>She is the heart behind Master Chunks. The business was established during the pandemic in 2022,
+                 inspired by the idea that people were spending more time at home and relying heavily on food delivery services. 
+                 With this in mind, Master Chunks aims to create delicious baked products that people can enjoy in the
+                 comfort of their homes or anywhere they choose.</p>
+        </div>
+
+        <!-- Box 3: Follow Us -->
+        <div class="about-box">
+    <h3>Follow Us</h3>
+    <p>Stay updated with our latest creations and offers:</p>
+    
+    <div class="social-icons">
+        <a href="mailto:masterchunks.info@gmail.com" class="icon-link gmail" title="Gmail">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://facebook.com/masterchunks" target="_blank" class="icon-link facebook" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/master.chunks" target="_blank" class="icon-link instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+    <h2>Our Baked Products</h2>
+
+    <div class="card-grid">
+
+        <div class="product-card">
+            <div class="card-bg" style="background-image:url('Coookies.jpg')"></div>
+            <div class="card-content">
+                <h3>Cookies</h3>
+                <p>Freshly baked cookies with a soft, chewy texture and rich, satisfying flavor.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="card-bg" style="background-image:url('Brownies.jpg')"></div>
+            <div class="card-content">
+                <h3>Brownies</h3>
+                <p>Fudgy chocolate brownies with a dense, moist texture and a rich, chocolatey flavor.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="card-bg" style="background-image:url('Redvelvet-cupcake.jpg')"></div>
+            <div class="card-content">
+                <h3>Redvelvet Cupcake</h3>
+                <p>Soft red velvet cupcakes with a subtle cocoa taste, topped with creamy frosting.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="card-bg" style="background-image:url('Banana-bread.jpg')"></div>
+            <div class="card-content">
+                <h3>Banana Bread</h3>
+                <p>Moist banana bread made with ripe bananas and a naturally sweet flavor.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="card-bg" style="background-image:url(crinkles.jpg)"></div>
+            <div class="card-content">
+                <h3>Crinkles</h3>
+                <p> Soft and crunchy baked crinkles.</p>
+            </div>
+        </div>
+
+         <div class="product-card">
+            <div class="card-bg" style="background-image:url(Red-cookies.jpg)"></div>
+            <div class="card-content">
+                <h3>Red Velvet Cookies</h3>
+                <p> Soft and crunchy baked cookies.</p>
+            </div>
+        </div>
+</section>
+
+<section id="help">
+    <h2>Help & Support</h2>
+    <div class="about-grid">
+        <div class="about-box">
+            <h3>Ordering</h3>
+            <p>To place an order, please message us through our website or via Facebook and Instagram with your preferred treats.
+                 We will be happy to assist you and provide our product prices.</p>
+        </div>
+        <div class="about-box">
+            <h3>Support</h3>
+            <p>If you experience any issues or get stuck while using our website, please try refreshing the page.
+                 You may also message us for further assistance or website improvements.</p>
+        </div>
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<section id="contact">
+    <h2 style="text-align: center; color: #7b4f30;">Contact Us</h2>
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+
+        <div class="contact-info">
+            <div class="info-row">
+                <i class="fas fa-phone"></i>
+                <span>+63 977 032 8487</span>
+            </div>
+            
+            <div class="info-row">
+                <i class="fas fa-envelope"></i>
+                <span>masterchunks.info@gmail.com</span>
+            </div>
+
+            <div class="info-row">
+                <a href="https://facebook.com/masterchunks" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    <span>Master Chunks</span>
+                </a>
+            </div>
+
+            <div class="info-row">
+                <a href="https://instagram.com/master.chunks" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span>@master.chunks</span>
+                </a>
+            </div>
+        </div>
+    </form>
+    <p id="message" style="text-align: center;"></p>
+</section>
+
+<footer>
+    <p>© 2026 Master Chunks | All Rights Reserve</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
